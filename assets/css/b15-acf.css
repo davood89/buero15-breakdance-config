@@ -1,0 +1,170 @@
+/* ACF Admin Styling - Optimierte Inputs und Icons */
+
+:root {
+    --md-shadow-1: 0 1px 3px rgba(0,0,0,0.12);
+    --md-shadow-2: 0 3px 6px rgba(0,0,0,0.15);
+    --md-primary: #1976d2;
+    --md-surface: #ffffff;
+    --md-background: #f5f5f5;
+    --md-border-radius: 6px;
+    --md-input-bg: #f8f9fa;
+    --md-input-border: #e0e0e0;
+    --md-input-focus: #2196f3;
+    --md-grey: #666666;
+    --md-grey-light: #888888;
+}
+
+/* Spezifische Icons */
+.acf-icon.-collapse:before {
+    content: "\f347" !important; /* Dashicon: Arrow down */
+}
+
+.acf-icon.-expand:before {
+    content: "\f345" !important; /* Dashicon: Arrow right */
+}
+
+.acf-icon.-minus:before {
+    content: "\f182" !important; /* Dashicon: Trash */
+}
+
+.acf-icon.-plus:before {
+    content: "\f132" !important; /* Dashicon: Plus */
+}
+
+.acf-field {
+    border: none !important;
+}
+
+/* Einheitliche Input-Felder */
+.acf-field input[type="text"],
+.acf-field input[type="email"],
+.acf-field input[type="url"],
+.acf-field textarea,
+.acf-field select {
+    background: var(--md-input-bg) !important;
+    border: 1px solid var(--md-input-border) !important;
+    border-radius: 8px !important;
+    padding: 12px !important;
+    transition: all 0.2s ease !important;
+    font-size: 14px !important;
+    line-height: 1.5 !important;
+    width: 100% !important;
+    /* box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.05) !important; */
+    min-height: 45px !important;
+}
+
+.acf-field input[type="text"]:focus,
+.acf-field input[type="email"]:focus,
+.acf-field input[type="url"]:focus,
+.acf-field textarea:focus,
+.acf-field select:focus {
+    border-color: var(--md-input-focus) !important;
+    box-shadow: 0 0 0 3px rgba(33, 150, 243, 0.15) !important;
+    outline: none !important;
+    background: white !important;
+}
+
+.acf-url .acf-icon {
+    top: 14px !important;
+}
+
+.acf-url input[type="url"] {
+    padding-left: 30px !important;
+}
+
+/* Toggle Button mit Chevron Icon */
+.acf-row-handle .acf-icon {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    width: 28px !important;
+    height: 28px !important;
+    background: white !important;
+    color: var(--md-grey) !important;
+    border-radius: 6px !important;
+    position: relative !important;
+    left: 50% !important;
+    transform: translateX(-50%) !important;
+    margin: 8px 0 !important;
+    cursor: pointer !important;
+    transition: all 0.2s ease !important;
+    border-width: 2px !important;
+}
+
+
+.acf-repeater > .acf-table > thead > tr > th {
+    border: none !important;
+    padding: 0;
+    font-size: 11px;
+    font-weight: 600;
+}
+
+label {
+    font-size: 11px !important;
+    font-weight: 600 !important;
+}
+
+
+.acf-repeater > .acf-table > tbody > tr > td {
+    /*border-top: 3px solid #7ccaff !important;*/
+    background-color: #5e93aa28 !important;
+}
+
+.acf-fields.-left>.acf-field:before {
+    border: none !important;
+    background: none !important;
+}
+
+.acf-repeater > .acf-table {
+    border-spacing: 0 15px !important;
+    border-collapse: separate !important;
+    background-color: transparent !important;
+    border: none !important;
+}
+
+.acf-repeater .acf-row-handle {
+    vertical-align: top !important;
+}
+
+/* Row Handle */
+.acf-repeater .acf-row-handle.order {
+    color: var(--md-grey) !important;
+    font-weight: 600 !important;
+    font-size: 14px !important;
+    text-align: center !important;
+    padding-top: 12px !important;
+    background-color: #5e93aa28 !important;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+}
+
+.acf-repeater .acf-row-handle.remove {
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+/* Add Button (Plus) */
+.acf-repeater .acf-actions .button {
+    background: #fff !important;
+    color: var(--md-grey) !important;
+    border: 2px solid #b5bcc3 !important;
+    padding: 8px 16px !important;
+    height: auto !important;
+    border-radius: 6px !important;
+    font-weight: 500 !important;
+    transition: all 0.2s ease !important;
+    box-shadow: none !important;
+}
+
+.acf-repeater .acf-actions .button:hover {
+    background: #fff !important;
+    color: #444 !important;
+    border: 2px solid #67b3d6 !important;
+}
+
+/* Collapsed State anpassen */
+.acf-repeater .acf-row.-collapsed {
+    background: #f8f9fa !important;
+    border-left: 4px solid var(--md-grey) !important;
+}
+
