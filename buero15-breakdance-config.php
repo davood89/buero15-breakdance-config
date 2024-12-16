@@ -18,7 +18,7 @@ if (!defined('WPINC')) {
 }
 
 // Plugin version
-define('B15_BREAKDANCE_CONFIG_VERSION', '1.0.0');
+define('B15_BREAKDANCE_CONFIG_VERSION', '1.0.1');
 
 /**
  * Enqueue admin styles
