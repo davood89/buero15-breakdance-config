@@ -3,7 +3,7 @@
  * Plugin Name: BÜRO15 Breakdance Config
  * Plugin URI: https://github.com/davood89/buero15-breakdance-config
  * Description: BÜRO15 Breakdance Konfiguration und ACF Styles
- * Version: 1.0.0
+ * Version: 1.0.1
  * Author: BÜRO15
  * Author URI: https://buero15.com
  * License: GPL v2 or later
