@@ -36,16 +36,19 @@ add_action('admin_enqueue_scripts', 'b15_load_admin_styles');
 /**
  * Plugin update checker setup
  */
-if (file_exists(__DIR__ . '/plugin-update-checker/plugin-update-checker.php')) {
-    require __DIR__ . '/plugin-update-checker/plugin-update-checker.php';
-    use YahnisElsts\PluginUpdateChecker\v5\PucFactory;
-    
-    $myUpdateChecker = PucFactory::buildUpdateChecker(
-        'https://github.com/davood89/buero15-breakdance-config/',
-        __FILE__,
-        'buero15-breakdance-config'
-    );
-    
-    // Für öffentliches Repository - keine Authentifizierung nötig
-    $myUpdateChecker->setBranch('main');
+function b15_init_update_checker() {
+    if (file_exists(__DIR__ . '/plugin-update-checker/plugin-update-checker.php')) {
+        require_once __DIR__ . '/plugin-update-checker/plugin-update-checker.php';
+        
+        if (class_exists('YahnisElsts\PluginUpdateChecker\v5\PucFactory')) {
+            $myUpdateChecker = YahnisElsts\PluginUpdateChecker\v5\PucFactory::buildUpdateChecker(
+                'https://github.com/davood89/buero15-breakdance-config/',
+                __FILE__,
+                'buero15-breakdance-config'
+            );
+            
+            $myUpdateChecker->setBranch('main');
+        }
+    }
 }
+add_action('init', 'b15_init_update_checker');
