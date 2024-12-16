@@ -1,7 +1,7 @@
 <?php
 /**
  * Plugin Name: BÜRO15 Breakdance Config
- * Plugin URI: https://github.com/yourusername/buero15-breakdance-config
+ * Plugin URI: https://github.com/davood89/buero15-breakdance-config
  * Description: BÜRO15 Breakdance Konfiguration und ACF Styles
  * Version: 1.0.0
  * Author: BÜRO15
@@ -9,7 +9,7 @@
  * License: GPL v2 or later
  * License URI: https://www.gnu.org/licenses/gpl-2.0.html
  * Text Domain: buero15-breakdance-config
- * GitHub Plugin URI: yourusername/buero15-breakdance-config
+ * GitHub Plugin URI: davood89/buero15-breakdance-config
  */
 
 // If this file is called directly, abort.
