@@ -52,15 +52,19 @@ function b15_init_update_checker() {
         
         if (class_exists('YahnisElsts\PluginUpdateChecker\v5\PucFactory')) {
             $myUpdateChecker = YahnisElsts\PluginUpdateChecker\v5\PucFactory::buildUpdateChecker(
-                'https://github.com/davood89/buero15-breakdance-config',
+                'https://github.com/davood89/buero15-breakdance-config/',
                 __FILE__,
                 'buero15-breakdance-config'
             );
             
+            // Release Assets aktivieren
             $myUpdateChecker->getVcsApi()->enableReleaseAssets();
+            
+            // Branch auf 'main' setzen
             $myUpdateChecker->setBranch('main');
             
-            $myUpdateChecker->setAuthentication('your-github-personal-access-token');
+            // GitHub Token entfernen, wenn das Repository öffentlich ist
+            // $myUpdateChecker->setAuthentication('your-github-personal-access-token');
         }
     }
 }
