@@ -3,7 +3,7 @@
  * Plugin Name: BÜRO15 Breakdance Config
  * Plugin URI: https://github.com/davood89/buero15-breakdance-config
  * Description: BÜRO15 Breakdance Konfiguration und ACF Styles
- * Version: 1.0.1
+ * Version: 1.0.2
  * Author: BÜRO15
  * Author URI: https://buero15.com
  * License: GPL v2 or later
@@ -18,7 +18,7 @@ if (!defined('WPINC')) {
 }
 
 // Plugin version
-define('B15_BREAKDANCE_CONFIG_VERSION', '1.0.1');
+define('B15_BREAKDANCE_CONFIG_VERSION', '1.0.2');
 
 /**
  * Enqueue admin styles
@@ -42,12 +42,15 @@ function b15_init_update_checker() {
         
         if (class_exists('YahnisElsts\PluginUpdateChecker\v5\PucFactory')) {
             $myUpdateChecker = YahnisElsts\PluginUpdateChecker\v5\PucFactory::buildUpdateChecker(
-                'https://github.com/davood89/buero15-breakdance-config/',
+                'https://github.com/davood89/buero15-breakdance-config',
                 __FILE__,
                 'buero15-breakdance-config'
             );
             
+            $myUpdateChecker->getVcsApi()->enableReleaseAssets();
             $myUpdateChecker->setBranch('main');
+            
+            $myUpdateChecker->setAuthentication('your-github-personal-access-token');
         }
     }
 }
