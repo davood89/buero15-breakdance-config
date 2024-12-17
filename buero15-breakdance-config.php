@@ -3,7 +3,7 @@
  * Plugin Name: BÜRO15 Breakdance Config
  * Plugin URI: https://github.com/davood89/buero15-breakdance-config
  * Description: BÜRO15 Breakdance Konfiguration und ACF Styles
- * Version: 1.0.2
+ * Version: 1.0.3
  * Author: BÜRO15
  * Author URI: https://buero15.com
  * License: GPL v2 or later
@@ -18,7 +18,7 @@ if (!defined('WPINC')) {
 }
 
 // Plugin version
-define('B15_BREAKDANCE_CONFIG_VERSION', '1.0.2');
+define('B15_BREAKDANCE_CONFIG_VERSION', '1.0.3');
 
 /**
  * Enqueue admin styles
@@ -32,6 +32,16 @@ function b15_load_admin_styles() {
     );
 }
 add_action('admin_enqueue_scripts', 'b15_load_admin_styles');
+
+
+add_action('breakdance_reusable_dependencies_urls', function ($urls) {
+    $urls['gsap'] = plugin_dir_url(__FILE__) . 'assets/js/gsap.min.js';
+    $urls['scrollTrigger'] = plugin_dir_url(__FILE__) . 'assets/js/ScrollTrigger.min.js';
+    
+    return $urls;
+});
+
+
 
 /**
  * Plugin update checker setup
